@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Gorilla/gorilla.tscn" type="PackedScene" id=1]
+
+[node name="main" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gorilla" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1.24261, 6.46045 )
+gravite = 10
+vitesse = 15
+angle = 300.0
