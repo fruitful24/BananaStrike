@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Launcher/Launcher_rotate.gd" type="Script" id=1]
+[ext_resource path="res://Launcher/Assets/raketenwerfer.png" type="Texture" id=2]
+[ext_resource path="res://Banana/banana_bullet.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 36.2427, 4.98259 )
+
+[node name="Launcher_scene" type="KinematicBody2D"]
+position = Vector2( 167, 152 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+banana_scene = ExtResource( 3 )
+banana_spawn_path = NodePath("../Launcher_scene/banana_spawn")
+
+[node name="Launcher" type="Sprite" parent="."]
+scale = Vector2( 0.239394, 0.375 )
+texture = ExtResource( 2 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+scale = Vector2( 1.12727, 1.76063 )
+shape = SubResource( 1 )
+
+[node name="banana_spawn" type="Position2D" parent="."]
+light_mask = 4
+position = Vector2( 48.3204, -5.61865 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 315.0
+margin_top = -123.0
+margin_right = 355.0
+margin_bottom = -109.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
