@@ -25,7 +25,7 @@
 
 # Version 0.2
 
-##Version non fonctionnelle du projet
+## Version non fonctionnelle du projet
 * tentative d'ajout d'un launcher
 * tentative de déplacement du gorille et du launcher
 ## pas de rapport
