@@ -9,7 +9,7 @@
 * ajout de la rotation du launcher qui gère l'angle du lancé
 * ajout de la gestion de la puissance puissance
 * ajout du décor
-* ajout d'un semblant de GUI (Bug#1 il faut gérer avec des signaux sous Godot, pas comme fait actuellement)
+* ajout d'un semblant de GUI (Bug#1) il faut gérer avec des signaux sous Godot, pas comme fait actuellement)
 * ajout des prémices des ennemis à abattre, les deux crocodiles derrière leur rocher
 ## Rapport en latex - Dossier "Documentation_Latex"
 * Le template est choisi ; la mise en page également
@@ -21,7 +21,7 @@
 * Des fichiers markdown (md) et pdf sont dispoinbles dans le répertoire dédié
 * Le script de gdm génère bien la doc technique, mais ne prend pas en compte les méthodes locales des classe (Bug#3)
 ## Pas de test unitaire
-* Gros Bug #4 en trop priorité dans la gestion des tâches
+* Gros (Bug #4) en trop priorité dans la gestion des tâches
 
 # Version 0.2
 
