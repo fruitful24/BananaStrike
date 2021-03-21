@@ -2,6 +2,12 @@
 
 # Version 0.3
 
+## Comment jouer ? 
+* flèches gauche et droite = déplacement du gorille (rester appuyé)
+* flèches haut et bas = orientation du launcher (rester appuyé)
+* touche + et - du pavé numérique = puissance du tir (rester appuyé)
+* touche "espace" déclement du tir de la banane (appui simple)
+
 ## Version dite béta du projet - Dossier principal 
 
 * ajout d'un launcher
