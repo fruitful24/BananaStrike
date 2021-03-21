@@ -1,16 +1,480 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://Gorilla/gorilla.tscn" type="PackedScene" id=1]
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://Gorilla/Gorilla_scene.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Launcher/Launcher_scene.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/wind.png" type="Texture" id=4]
+[ext_resource path="res://Banana/Banana_Scene.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/sol.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/rock.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/mud.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Tree.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/grass.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/sponk.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/stock.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Tree2.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/grass2.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/background.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/jungle_tree2_bg.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/background_color.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/clouds1.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/jungle_tree1.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/clouds2.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/jungle_paralax_bg2.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/jungle_bg_trees.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/souche.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/croco.png" type="Texture" id=24]
 
 [node name="main" type="Control"]
-margin_right = 40.0
-margin_bottom = 40.0
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="gorilla" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1.24261, 6.46045 )
-gravite = 10
-vitesse = 15
-angle = 300.0
+[node name="Gorilla_scene" parent="." instance=ExtResource( 2 )]
+position = Vector2( 234, 499.772 )
+z_index = 10
+
+[node name="Launcher_scene" parent="." instance=ExtResource( 3 )]
+light_mask = -2147483646
+position = Vector2( 234, 486 )
+
+[node name="Banana_Scene" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="Angle" type="Label" parent="."]
+show_behind_parent = true
+margin_left = 30.0
+margin_top = 70.0
+margin_right = 70.0
+margin_bottom = 84.0
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0.752941, 0.12549, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Puissance" type="Label" parent="."]
+margin_left = 30.0
+margin_top = 90.0
+margin_right = 70.0
+margin_bottom = 104.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vitesse_vent" type="Label" parent="."]
+margin_left = 350.0
+margin_top = 70.0
+margin_right = 577.0
+margin_bottom = 86.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Direction_vent" type="Label" parent="."]
+margin_left = 350.0
+margin_top = 90.0
+margin_right = 629.0
+margin_bottom = 115.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vent" type="Sprite" parent="."]
+position = Vector2( 400, 40 )
+rotation = 0.0855211
+scale = Vector2( 0.191111, 0.2 )
+texture = ExtResource( 4 )
+
+[node name="Sol" type="Sprite" parent="."]
+position = Vector2( 23.5314, 548.379 )
+scale = Vector2( 0.45098, 0.510417 )
+texture = ExtResource( 6 )
+
+[node name="mud" type="Sprite" parent="Sol"]
+position = Vector2( 1.8286, 75.6597 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud2" type="Sprite" parent="Sol"]
+position = Vector2( 99.8391, 75.6074 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud3" type="Sprite" parent="Sol"]
+position = Vector2( 202.403, 75.2814 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud4" type="Sprite" parent="Sol"]
+position = Vector2( 303.769, 75.712 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud5" type="Sprite" parent="Sol"]
+position = Vector2( 406.332, 74.6539 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="Tree" type="Sprite" parent="Sol"]
+position = Vector2( 54.0891, -209.71 )
+scale = Vector2( 0.857299, 1.03688 )
+texture = ExtResource( 9 )
+
+[node name="sol2" type="Sprite" parent="Sol"]
+position = Vector2( 405.842, -0.796631 )
+texture = ExtResource( 6 )
+
+[node name="sol3" type="Sprite" parent="Sol"]
+position = Vector2( 303.901, 0.639893 )
+texture = ExtResource( 6 )
+
+[node name="sol4" type="Sprite" parent="Sol"]
+position = Vector2( 203.098, 1.59326 )
+texture = ExtResource( 6 )
+
+[node name="sol5" type="Sprite" parent="Sol"]
+position = Vector2( 100.862, 0.209106 )
+texture = ExtResource( 6 )
+
+[node name="rock" type="Sprite" parent="Sol"]
+position = Vector2( 680.574, -63.8215 )
+scale = Vector2( 0.4794, 0.41299 )
+texture = ExtResource( 7 )
+
+[node name="grass" type="Sprite" parent="Sol"]
+position = Vector2( 1485.91, -70.175 )
+scale = Vector2( 1.99969, 1.42971 )
+texture = ExtResource( 10 )
+
+[node name="grass2" type="Sprite" parent="Sol"]
+position = Vector2( 820.406, -66.9187 )
+scale = Vector2( 1.82864, 1.35029 )
+texture = ExtResource( 10 )
+
+[node name="grass3" type="Sprite" parent="Sol"]
+position = Vector2( 1891.9, -74.8712 )
+scale = Vector2( 1.8898, 1.36714 )
+texture = ExtResource( 14 )
+
+[node name="grass4" type="Sprite" parent="Sol"]
+position = Vector2( 1127.79, -69.4441 )
+scale = Vector2( 1.9717, 1.40003 )
+texture = ExtResource( 14 )
+
+[node name="grass5" type="Sprite" parent="Sol"]
+position = Vector2( 579.655, -69.4441 )
+scale = Vector2( 1.76695, 1.40003 )
+texture = ExtResource( 14 )
+
+[node name="Decor2" type="Sprite" parent="Sol"]
+position = Vector2( 507.603, 0 )
+texture = ExtResource( 6 )
+
+[node name="Decor3" type="Sprite" parent="Sol"]
+position = Vector2( 1013.31, -3.3595 )
+texture = ExtResource( 6 )
+
+[node name="mud" type="Sprite" parent="Sol/Decor3"]
+position = Vector2( 1.8286, 75.6597 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud2" type="Sprite" parent="Sol/Decor3"]
+position = Vector2( 99.8391, 75.6074 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud3" type="Sprite" parent="Sol/Decor3"]
+position = Vector2( 202.403, 75.2814 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud4" type="Sprite" parent="Sol/Decor3"]
+position = Vector2( 303.769, 75.712 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud5" type="Sprite" parent="Sol/Decor3"]
+position = Vector2( 406.332, 74.6539 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="sol2" type="Sprite" parent="Sol/Decor3"]
+position = Vector2( 403.625, -0.796631 )
+texture = ExtResource( 6 )
+
+[node name="sol3" type="Sprite" parent="Sol/Decor3"]
+position = Vector2( 301.684, 0.639893 )
+texture = ExtResource( 6 )
+
+[node name="sol4" type="Sprite" parent="Sol/Decor3"]
+position = Vector2( 200.881, 1.59326 )
+texture = ExtResource( 6 )
+
+[node name="sol5" type="Sprite" parent="Sol/Decor3"]
+position = Vector2( 100.862, 0.209106 )
+texture = ExtResource( 6 )
+
+[node name="rock" type="Sprite" parent="Sol/Decor3"]
+position = Vector2( 595.418, -58.5886 )
+scale = Vector2( 0.4794, 0.41299 )
+texture = ExtResource( 7 )
+
+[node name="Decor4" type="Sprite" parent="Sol"]
+position = Vector2( 1518.87, 0.558838 )
+texture = ExtResource( 6 )
+
+[node name="mud" type="Sprite" parent="Sol/Decor4"]
+position = Vector2( 1.8286, 75.6597 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud2" type="Sprite" parent="Sol/Decor4"]
+position = Vector2( 99.8391, 75.6074 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud3" type="Sprite" parent="Sol/Decor4"]
+position = Vector2( 202.403, 75.2814 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud4" type="Sprite" parent="Sol/Decor4"]
+position = Vector2( 303.769, 75.712 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud5" type="Sprite" parent="Sol/Decor4"]
+position = Vector2( 403.875, 74.6539 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud8" type="Sprite" parent="Sol/Decor4"]
+position = Vector2( 506.185, 73.3223 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud7" type="Sprite" parent="Sol/Decor4"]
+position = Vector2( 607.552, 73.7529 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud6" type="Sprite" parent="Sol/Decor4"]
+position = Vector2( 710.115, 72.6948 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="sol2" type="Sprite" parent="Sol/Decor4"]
+position = Vector2( 405.842, -0.796631 )
+texture = ExtResource( 6 )
+
+[node name="sol3" type="Sprite" parent="Sol/Decor4"]
+position = Vector2( 303.901, 0.639893 )
+texture = ExtResource( 6 )
+
+[node name="sol4" type="Sprite" parent="Sol/Decor4"]
+position = Vector2( 203.099, 1.59326 )
+texture = ExtResource( 6 )
+
+[node name="sol8" type="Sprite" parent="Sol/Decor4"]
+position = Vector2( 709.625, -2.7558 )
+texture = ExtResource( 6 )
+
+[node name="sol7" type="Sprite" parent="Sol/Decor4"]
+position = Vector2( 607.684, -1.31927 )
+texture = ExtResource( 6 )
+
+[node name="sol6" type="Sprite" parent="Sol/Decor4"]
+position = Vector2( 506.881, -0.365906 )
+texture = ExtResource( 6 )
+
+[node name="sol5" type="Sprite" parent="Sol/Decor4"]
+position = Vector2( 100.862, 2.16833 )
+texture = ExtResource( 6 )
+
+[node name="rock" type="Sprite" parent="Sol/Decor4"]
+position = Vector2( -518.175, -69.7593 )
+scale = Vector2( 0.4794, 0.41299 )
+texture = ExtResource( 7 )
+
+[node name="Tree2" type="Sprite" parent="Sol/Decor4"]
+position = Vector2( -255.799, -206.745 )
+scale = Vector2( 0.857299, 1.03688 )
+texture = ExtResource( 13 )
+
+[node name="mud6" type="Sprite" parent="Sol"]
+position = Vector2( 509.432, 75.6597 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud7" type="Sprite" parent="Sol"]
+position = Vector2( 607.443, 75.6074 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud8" type="Sprite" parent="Sol"]
+position = Vector2( 710.006, 75.2812 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud9" type="Sprite" parent="Sol"]
+position = Vector2( 811.372, 75.712 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="mud10" type="Sprite" parent="Sol"]
+position = Vector2( 913.936, 74.6538 )
+scale = Vector2( 1.02277, 0.93295 )
+texture = ExtResource( 8 )
+
+[node name="sol6" type="Sprite" parent="Sol"]
+position = Vector2( 913.445, -0.796631 )
+texture = ExtResource( 6 )
+
+[node name="sol7" type="Sprite" parent="Sol"]
+position = Vector2( 811.505, 0.639893 )
+texture = ExtResource( 6 )
+
+[node name="sol8" type="Sprite" parent="Sol"]
+position = Vector2( 710.702, 1.59326 )
+texture = ExtResource( 6 )
+
+[node name="sol9" type="Sprite" parent="Sol"]
+position = Vector2( 608.465, 0.209106 )
+texture = ExtResource( 6 )
+
+[node name="sponk" type="Sprite" parent="Sol"]
+position = Vector2( 1309.61, -68.3587 )
+scale = Vector2( 2.21739, 1.95918 )
+texture = ExtResource( 11 )
+
+[node name="sponk2" type="Sprite" parent="Sol"]
+position = Vector2( 1393.14, -391.814 )
+scale = Vector2( 2.21739, 1.95918 )
+texture = ExtResource( 11 )
+
+[node name="sponk3" type="Sprite" parent="Sol"]
+position = Vector2( 31.9965, -374.447 )
+scale = Vector2( 2.21739, 1.95918 )
+texture = ExtResource( 11 )
+
+[node name="stock" type="Sprite" parent="Sol"]
+position = Vector2( 179.413, -59.6754 )
+scale = Vector2( 2.21739, 1.95918 )
+texture = ExtResource( 12 )
+
+[node name="background" type="Sprite" parent="."]
+show_behind_parent = true
+light_mask = 16
+position = Vector2( 511.415, 317.92 )
+scale = Vector2( 2.83547, 1.59237 )
+texture = ExtResource( 15 )
+
+[node name="background_color" type="Sprite" parent="background"]
+position = Vector2( -5.23329e-05, -63.256 )
+scale = Vector2( 0.941931, 0.62515 )
+texture = ExtResource( 17 )
+
+[node name="clouds1" type="Sprite" parent="background/background_color"]
+position = Vector2( -123.63, -61.8801 )
+scale = Vector2( 0.429157, 1.02443 )
+texture = ExtResource( 18 )
+
+[node name="clouds2" type="Sprite" parent="background/background_color"]
+position = Vector2( 49.3692, -54.0885 )
+scale = Vector2( 0.429157, 1.02443 )
+texture = ExtResource( 18 )
+
+[node name="clouds3" type="Sprite" parent="background/background_color"]
+position = Vector2( 144.374, -46.297 )
+scale = Vector2( 0.429157, 1.02443 )
+texture = ExtResource( 18 )
+
+[node name="clouds4" type="Sprite" parent="background/background_color"]
+position = Vector2( -13.6906, 48.3142 )
+scale = Vector2( 0.429157, 1.02443 )
+texture = ExtResource( 18 )
+
+[node name="clouds5" type="Sprite" parent="background/background_color"]
+position = Vector2( -44.8056, -38.5055 )
+scale = Vector2( 0.429157, 1.02443 )
+texture = ExtResource( 20 )
+
+[node name="clouds6" type="Sprite" parent="background/background_color"]
+position = Vector2( 56.007, 28.2789 )
+scale = Vector2( 0.429157, 1.02443 )
+texture = ExtResource( 20 )
+
+[node name="jungle_paralax_bg2" type="Sprite" parent="background/background_color"]
+position = Vector2( -69.1502, -3.46919 )
+scale = Vector2( 0.429622, 1.0643 )
+texture = ExtResource( 21 )
+
+[node name="jungle_paralax_bg3" type="Sprite" parent="background/background_color"]
+position = Vector2( 95.3151, -3.35645 )
+scale = Vector2( 0.429622, 1.0643 )
+texture = ExtResource( 21 )
+
+[node name="jungle_bg_trees" type="Sprite" parent="background"]
+position = Vector2( -157.678, -19.8314 )
+scale = Vector2( 0.404236, 0.64042 )
+texture = ExtResource( 22 )
+
+[node name="jungle_bg_trees2" type="Sprite" parent="background"]
+position = Vector2( -65.7695, -26.501 )
+scale = Vector2( 0.404236, 0.64042 )
+texture = ExtResource( 22 )
+
+[node name="jungle_bg_trees3" type="Sprite" parent="background"]
+position = Vector2( 84.6694, -24.7527 )
+scale = Vector2( 0.404236, 0.64042 )
+texture = ExtResource( 22 )
+
+[node name="jungle_bg_trees4" type="Sprite" parent="background"]
+position = Vector2( 159.632, -26.0939 )
+scale = Vector2( 0.404236, 0.64042 )
+texture = ExtResource( 22 )
+
+[node name="jungle_tree1" type="Sprite" parent="background"]
+use_parent_material = true
+position = Vector2( -18.7573, 11.4813 )
+scale = Vector2( 0.352676, 0.627994 )
+texture = ExtResource( 19 )
+
+[node name="jungle_tree2" type="Sprite" parent="background"]
+position = Vector2( -125.439, 5.91458 )
+scale = Vector2( 0.352676, 0.627994 )
+texture = ExtResource( 19 )
+
+[node name="jungle_tree2_bg" type="Sprite" parent="background"]
+position = Vector2( 35.5606, -1.39172 )
+scale = Vector2( 0.432835, 0.686964 )
+texture = ExtResource( 16 )
+
+[node name="souche" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 944.886, 511.826 )
+rotation = -0.258309
+scale = Vector2( 0.440412, 0.479209 )
+texture = ExtResource( 23 )
+
+[node name="croco" type="Sprite" parent="souche"]
+show_behind_parent = true
+position = Vector2( 55.42, -68.292 )
+rotation = 0.23821
+scale = Vector2( 1.03916, 0.979747 )
+texture = ExtResource( 24 )
+
+[node name="souche2" type="Sprite" parent="."]
+position = Vector2( 942.669, 337.864 )
+scale = Vector2( 0.429047, 0.345835 )
+texture = ExtResource( 23 )
+
+[node name="croco2" type="Sprite" parent="souche2"]
+show_behind_parent = true
+position = Vector2( -151.718, -120.732 )
+rotation = 2.00942e-08
+scale = Vector2( 1.08657, 1.43874 )
+texture = ExtResource( 24 )

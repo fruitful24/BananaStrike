@@ -1,0 +1,680 @@
+{
+  "name": "Banana v0.3",
+  "description": "",
+  "version": null,
+  "classes": [
+    {
+      "name": "",
+      "path": "res://ReferenceCollectorCLI.gd",
+      "extends_class": [
+        "SceneTree"
+      ],
+      "extends_file": "",
+      "icon": "",
+      "signature": "class ReferenceCollectorCLI.gd",
+      "description": "",
+      "sub_classes": [
+
+      ],
+      "constants": [
+
+      ],
+      "members": [
+        {
+          "name": "Collector",
+          "data_type": "SceneTree",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var Collector: SceneTree",
+          "description": ""
+        },
+        {
+          "name": "directories",
+          "data_type": "Array",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var directories: Array",
+          "description": " A list of directories to collect files from.\r\n"
+        },
+        {
+          "name": "is_recursive",
+          "data_type": "bool",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var is_recursive: bool",
+          "description": " If true, explore each directory recursively\r\n"
+        },
+        {
+          "name": "patterns",
+          "data_type": "Array",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var patterns: Array",
+          "description": " A list of patterns to filter files.\r\n"
+        }
+      ],
+      "signals": [
+
+      ],
+      "methods": [
+        {
+          "name": "_init",
+          "return_type": "null",
+          "rpc_mode": 0,
+          "signature": "func _init() -> null",
+          "description": "",
+          "arguments": [
+
+          ]
+        }
+      ],
+      "static_functions": [
+
+      ]
+    },
+    {
+      "name": "Launcher",
+      "path": "res://Launcher/Launcher_scene.gd",
+      "extends_class": [
+        "KinematicBody2D"
+      ],
+      "extends_file": "",
+      "icon": "",
+      "signature": "class Launcher",
+      "description": "La classe qui gère le lanceur de banane et son tir\n",
+      "sub_classes": [
+
+      ],
+      "constants": [
+
+      ],
+      "members": [
+        {
+          "name": "rotation_vitesse",
+          "data_type": "var",
+          "default_value": 1,
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var rotation_vitesse = 1",
+          "description": "Initialisation des conditions initiales pour la rotation-déplaceement du lanceur\n"
+        },
+        {
+          "name": "rotation_direction",
+          "data_type": "var",
+          "default_value": 0,
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var rotation_direction = 0",
+          "description": ""
+        },
+        {
+          "name": "deplacement_horizontal",
+          "data_type": "var",
+          "default_value": "(0, 0)",
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var deplacement_horizontal = \"(0, 0)\"",
+          "description": ""
+        },
+        {
+          "name": "vitesse_horizontale",
+          "data_type": "var",
+          "default_value": 200,
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var vitesse_horizontale = 200",
+          "description": ""
+        },
+        {
+          "name": "angle_de_tir",
+          "data_type": "var",
+          "default_value": 0,
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var angle_de_tir = 0",
+          "description": "Initialisation des conditions initiales du tir\n"
+        },
+        {
+          "name": "puissance_de_tir",
+          "data_type": "var",
+          "default_value": 5,
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var puissance_de_tir = 5",
+          "description": ""
+        },
+        {
+          "name": "gravite",
+          "data_type": "var",
+          "default_value": 8,
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var gravite = 8",
+          "description": ""
+        },
+        {
+          "name": "direction_du_tir",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var direction_du_tir",
+          "description": ""
+        },
+        {
+          "name": "power_change",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var power_change",
+          "description": ""
+        },
+        {
+          "name": "waited",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var waited",
+          "description": "Initialisation du compteur de temps entre chaque tir\nIntialement on a jmais attendu\n"
+        },
+        {
+          "name": "shooting",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var shooting",
+          "description": "Initialement on ne tire pas\n"
+        },
+        {
+          "name": "delay",
+          "data_type": "var",
+          "default_value": 1,
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var delay = 1",
+          "description": "duree entre chaque tir en seconde\n"
+        },
+        {
+          "name": "banana_scene",
+          "data_type": "var",
+          "default_value": "[Object:null]",
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var banana_scene = \"[Object:null]\"",
+          "description": " Gestion de l'import Banana Scene et Banana Spawn\nOn importe la scene de la banane-projectile\n"
+        },
+        {
+          "name": "banana_spawn_path",
+          "data_type": "var",
+          "default_value": "",
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var banana_spawn_path = \"\"",
+          "description": "On importe l'endroit plancé sur la carte où la banane spawn\n"
+        },
+        {
+          "name": "banana_spawn",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var banana_spawn",
+          "description": "On fait appraître la banane à cette endroit quand on est prêt à tirer\n"
+        }
+      ],
+      "signals": [
+
+      ],
+      "methods": [
+        {
+          "name": "set_direction",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func set_direction()",
+          "description": "\nFonction qui règle l'angle initial et la puissance du tir#\n",
+          "arguments": [
+
+          ]
+        },
+        {
+          "name": "fire_once",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func fire_once()",
+          "description": " Fonction appelée à l'appui de la touche espace, le tir est déclecnhé\n",
+          "arguments": [
+
+          ]
+        },
+        {
+          "name": "shoot",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func shoot()",
+          "description": "Quand l'ordre de tirer est donné, on tire la banane dans la direction donnée\n",
+          "arguments": [
+
+          ]
+        },
+        {
+          "name": "maj_label",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func maj_label()",
+          "description": "Fcontion qui récupère les caractéristiques du tir et qui permet ensuite de les afficher\n",
+          "arguments": [
+
+          ]
+        },
+        {
+          "name": "get_input",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func get_input()",
+          "description": "A chaque frame, on analyse si les touches du clavier sont pressées et on agit en conséquence\n",
+          "arguments": [
+
+          ]
+        },
+        {
+          "name": "_physics_process",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _physics_process(delta)",
+          "description": "Pendant le processus on déplace conjointement gorille et banane\n",
+          "arguments": [
+            {
+              "name": "delta",
+              "type": "var"
+            }
+          ]
+        },
+        {
+          "name": "_ready",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _ready()",
+          "description": "Dès le jeu lancé, il est prêt à gérer les processus physique est la surveillance des touches\n",
+          "arguments": [
+
+          ]
+        },
+        {
+          "name": "_input",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _input(event)",
+          "description": "Une fois la barre d'espace pressée, on autorise le tir, puis on bascule de nouveau au relachement de la touche\n",
+          "arguments": [
+            {
+              "name": "event",
+              "type": "var"
+            }
+          ]
+        },
+        {
+          "name": "_process",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _process(delta)",
+          "description": "Fonction qui gère le compteur de tir, tant que le délai n'est pas atteint on ne peut pas tirer de nouveau\n",
+          "arguments": [
+            {
+              "name": "delta",
+              "type": "var"
+            }
+          ]
+        }
+      ],
+      "static_functions": [
+
+      ]
+    },
+    {
+      "name": "",
+      "path": "res://main.gd",
+      "extends_class": [
+        "Control"
+      ],
+      "extends_file": "",
+      "icon": "",
+      "signature": "class main.gd",
+      "description": "",
+      "sub_classes": [
+
+      ],
+      "constants": [
+
+      ],
+      "members": [
+
+      ],
+      "signals": [
+
+      ],
+      "methods": [
+        {
+          "name": "maj_ui",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func maj_ui()",
+          "description": "",
+          "arguments": [
+
+          ]
+        },
+        {
+          "name": "_physics_process",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _physics_process(delta)",
+          "description": "",
+          "arguments": [
+            {
+              "name": "delta",
+              "type": "var"
+            }
+          ]
+        }
+      ],
+      "static_functions": [
+
+      ]
+    },
+    {
+      "name": "Banana",
+      "path": "res://Banana/Banana_Scene.gd",
+      "extends_class": [
+        "KinematicBody2D"
+      ],
+      "extends_file": "",
+      "icon": "",
+      "signature": "class Banana",
+      "description": " la classe qui gère la trajectoire du projectile-banane\n",
+      "sub_classes": [
+
+      ],
+      "constants": [
+
+      ],
+      "members": [
+        {
+          "name": "_gravite",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var _gravite",
+          "description": " La gravité est fiée à 0 mais on la récupère depuis la scène launcher, c'est la valeur locale de la classe\n"
+        },
+        {
+          "name": "_vent",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var _vent",
+          "description": " Tirage aléatoire du vent entre -4 et 4\n"
+        },
+        {
+          "name": "_movement",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var _movement",
+          "description": " Initialisation du vecteur de déplcement pour le projectile-banane\n"
+        }
+      ],
+      "signals": [
+
+      ],
+      "methods": [
+        {
+          "name": "shoot",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func shoot(direction_du_tir, gravite)",
+          "description": " Méthode pour le tir -  On récupère les paramètres du tir de l'autre scène\n",
+          "arguments": [
+            {
+              "name": "direction_du_tir",
+              "type": "var"
+            },
+            {
+              "name": "gravite",
+              "type": "var"
+            }
+          ]
+        },
+        {
+          "name": "_physics_process",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _physics_process(delta)",
+          "description": " Le moteur de jeu fait se déplacer la banane\n",
+          "arguments": [
+            {
+              "name": "delta",
+              "type": "var"
+            }
+          ]
+        }
+      ],
+      "static_functions": [
+
+      ]
+    },
+    {
+      "name": "Gorilla",
+      "path": "res://Gorilla/Gorilla_scene.gd",
+      "extends_class": [
+        "KinematicBody2D"
+      ],
+      "extends_file": "",
+      "icon": "",
+      "signature": "class Gorilla",
+      "description": "La classe qui gère le gorille et son déplacement\n",
+      "sub_classes": [
+
+      ],
+      "constants": [
+
+      ],
+      "members": [
+        {
+          "name": "deplacement_horizontal",
+          "data_type": "var",
+          "default_value": "(0, 0)",
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var deplacement_horizontal = \"(0, 0)\"",
+          "description": "Initialisation du vecteur deplacement horizontal\n"
+        },
+        {
+          "name": "vitesse_horizontale",
+          "data_type": "var",
+          "default_value": 200,
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var vitesse_horizontale = 200",
+          "description": "Vitesse de deplacement horizontal\n"
+        }
+      ],
+      "signals": [
+
+      ],
+      "methods": [
+        {
+          "name": "get_input",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func get_input()",
+          "description": "On recupere les actions du clavier\n",
+          "arguments": [
+
+          ]
+        },
+        {
+          "name": "_physics_process",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _physics_process(delta)",
+          "description": "On réalise de déplacement physique du gorille\n",
+          "arguments": [
+            {
+              "name": "delta",
+              "type": "var"
+            }
+          ]
+        }
+      ],
+      "static_functions": [
+
+      ]
+    },
+    {
+      "name": "",
+      "path": "res://Collector.gd",
+      "extends_class": [
+        "SceneTree"
+      ],
+      "extends_file": "",
+      "icon": "",
+      "signature": "class Collector.gd",
+      "description": "",
+      "sub_classes": [
+
+      ],
+      "constants": [
+
+      ],
+      "members": [
+
+      ],
+      "signals": [
+
+      ],
+      "methods": [
+        {
+          "name": "find_files",
+          "return_type": "PoolStringArray",
+          "rpc_mode": 0,
+          "signature": "func find_files(dirpath: String = \"\", patterns: PoolStringArray = [], is_recursive: bool = false, do_skip_hidden: bool = true) -> PoolStringArray",
+          "description": "",
+          "arguments": [
+            {
+              "name": "dirpath",
+              "type": "String",
+              "default_value": ""
+            },
+            {
+              "name": "patterns",
+              "type": "PoolStringArray",
+              "default_value": [
+
+              ]
+            },
+            {
+              "name": "is_recursive",
+              "type": "bool",
+              "default_value": false
+            },
+            {
+              "name": "do_skip_hidden",
+              "type": "bool",
+              "default_value": true
+            }
+          ]
+        },
+        {
+          "name": "save_text",
+          "return_type": "null",
+          "rpc_mode": 0,
+          "signature": "func save_text(path: String = \"\", content: String = \"\") -> null",
+          "description": " Saves text to a file.\r\n",
+          "arguments": [
+            {
+              "name": "path",
+              "type": "String",
+              "default_value": ""
+            },
+            {
+              "name": "content",
+              "type": "String",
+              "default_value": ""
+            }
+          ]
+        },
+        {
+          "name": "get_reference",
+          "return_type": "Dictionary",
+          "rpc_mode": 0,
+          "signature": "func get_reference(files: PoolStringArray = [], refresh_cache: bool = false) -> Dictionary",
+          "description": " Parses a list of GDScript files and returns a list of dictionaries with the\r\n code reference data.\r\n\r\n If `refresh_cache` is true, will refresh Godot's cache and get fresh symbols.\r\n",
+          "arguments": [
+            {
+              "name": "files",
+              "type": "PoolStringArray",
+              "default_value": [
+
+              ]
+            },
+            {
+              "name": "refresh_cache",
+              "type": "bool",
+              "default_value": false
+            }
+          ]
+        },
+        {
+          "name": "print_pretty_json",
+          "return_type": "String",
+          "rpc_mode": 0,
+          "signature": "func print_pretty_json(reference: Dictionary) -> String",
+          "description": "",
+          "arguments": [
+            {
+              "name": "reference",
+              "type": "Dictionary"
+            }
+          ]
+        }
+      ],
+      "static_functions": [
+
+      ]
+    }
+  ]
+}

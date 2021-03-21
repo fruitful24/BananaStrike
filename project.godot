@@ -8,15 +8,32 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Banana",
+"language": "GDScript",
+"path": "res://Banana/Banana_Scene.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Gorilla",
+"language": "GDScript",
+"path": "res://Gorilla/Gorilla_scene.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Launcher",
+"language": "GDScript",
+"path": "res://Launcher/Launcher_scene.gd"
+} ]
 _global_script_class_icons={
-
+"Banana": "",
+"Gorilla": "",
+"Launcher": ""
 }
 
 [application]
 
-config/name="Banana Strike v0.2"
-run/main_scene="res://Main.tscn"
+config/name="Banana v0.3"
+run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
 [input]
@@ -50,8 +67,17 @@ click={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
+ui_power_plus={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777349,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_power_less={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777347,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [rendering]
 
-quality/2d/use_pixel_snap=true
 environment/default_environment="res://default_env.tres"
