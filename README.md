@@ -1,7 +1,9 @@
 # BananaStrike - Projet Banana Strike - AMU - L3S6
 
 #Version 0.3
+
 ##Version dite béta du projet - Dossier principal 
+
 * ajout d'un launcher
 * ajout d'un déplacement synchronisé launcher/gorille
 * ajout de la rotation du launcher qui gère l'angle du lancé
@@ -22,6 +24,7 @@
 * Gros Bug #4 en trop priorité dans la gestion des tâches
 
 #Version 0.2
+
 ##Version non fonctionnelle du projet
 * tentative d'ajout d'un launcher
 * tentative de déplacement du gorille et du launcher
@@ -30,6 +33,7 @@
 ##pas de test unitaire
 
 #Version 0.1
+
 ##Version initiale du projet.
 * le gorille est statique et lance une banane de direction fixée dans le code
 * pas de rapport
