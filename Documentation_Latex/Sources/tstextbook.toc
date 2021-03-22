@@ -1,0 +1,27 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}% 
+\contentsline {chapter}{\numberline {2}Pr\IeC {\'e}sentation du projet}{6}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}L\IeC {\textquoteright }id\IeC {\'e}e}{6}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Les membres de l\IeC {\textquoteright }\IeC {\'e}quipe}{7}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}L\IeC {\textquoteright }ambiance du jeu}{7}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Les pr\IeC {\'e}conceptions techniques}{7}{section.2.4}% 
+\contentsline {section}{\numberline {2.5}Des ressources libres en ligne}{9}{section.2.5}% 
+\contentsline {chapter}{\numberline {3}Un peu de physique}{10}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}La chute libre sans frottement}{10}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}La chute libre avec influence ext\IeC {\'e}rieure}{12}{section.3.2}% 
+\contentsline {chapter}{\numberline {4}Godot}{14}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Pr\IeC {\'e}sentation rapide}{14}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Les sc\IeC {\`e}nes et les n\IeC {\oe }uds}{16}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Les classes et les h\IeC {\'e}ritages}{16}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}Les variables}{16}{section.4.4}% 
+\contentsline {chapter}{\numberline {5}Quelques d\IeC {\'e}tails sur l'algorithme}{17}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}La n\IeC {\oe }ud main et le GUI}{17}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Le n\IeC {\oe }ud Gorilla}{17}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}Le n\IeC {\oe }ud Launcher}{17}{section.5.3}% 
+\contentsline {section}{\numberline {5.4}Le n\IeC {\oe }ud Banana}{17}{section.5.4}% 
+\contentsline {chapter}{\numberline {6}A propos de cette documentation Latex}{18}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Les templates}{18}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}Le d\IeC {\'e}coupage}{18}{section.6.2}% 
+\contentsline {chapter}{\numberline {7}Conclusion}{19}{chapter.7}% 
+\contentsline {chapter}{\leavevmode {\color {tssteelblue}Bibliographie}}{20}{chapter*.3}% 
+\contentsfinish 
